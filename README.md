@@ -18,6 +18,7 @@
     <li>Target Device - HoloLens </li>
     <li>UWP Build Type - D3D</li>
     <li>UWP SDK - Latest Installed</li>
+	<li>MinVersionTested="10.0.10586.0"</li>
     <li>Check "Unity C# Projects" under Debugging</li>
   </ul>
   Build
