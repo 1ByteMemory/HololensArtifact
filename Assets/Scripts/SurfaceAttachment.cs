@@ -21,7 +21,7 @@ public class SurfaceAttachment : MonoBehaviour
 
 	private Vector3 dirNormalized;
 
-	private List<GameObject> spatialMeshes = new List<GameObject>();
+	private GameObject[] spatialMeshes;
 
     // Start is called before the first frame update
     void Start()
@@ -107,40 +107,37 @@ public class SurfaceAttachment : MonoBehaviour
 
 		GameObject MeshObserver;
 
-		try
+
+		if (GameObject.Find("Windows Mixed Reality Spatial Mesh Observer") != null)
 		{
 			MeshObserver = GameObject.Find("Windows Mixed Reality Spatial Mesh Observer");
-		}
-		catch (System.NullReferenceException)
-		{
-			return;
-		}
+			Debug.Log(MeshObserver.transform.childCount);
 
-		if(MeshObserver != null)
-		{
+			spatialMeshes = new GameObject[MeshObserver.transform.childCount];
+
 			for (int i = 0; i < MeshObserver.transform.childCount; i++)
 			{
-				spatialMeshes.Add(MeshObserver.transform.GetChild(i).gameObject);
+				spatialMeshes[i] = MeshObserver.transform.GetChild(i).gameObject;
 				Debug.Log(i + ": " + spatialMeshes[i]);
 			}
 		
 
 			Debug.Log("You may pass");
 			meshAvailable = true;
+
+
+			Debug.Log(spatialMeshes.Length);
+
+			// Pick a random position and set the travel direction to that
+			randomPosition = PickRandomMeshTransform().position;
+			SetDirNormailsed(prevPosition, randomPosition);
 		}
-
-
-
-		// Pick a random position and set the travel direction to that
-		randomPosition = PickRandomMeshTransform().position;
-		SetDirNormailsed(prevPosition, randomPosition);
-
 	}
 
 
 	public Transform PickRandomMeshTransform()
 	{
-		int randomIndex = Random.Range(0, spatialMeshes.Count - 1);
+		int randomIndex = Random.Range(0, spatialMeshes.Length - 1);
 
 		
 		return spatialMeshes[randomIndex].transform;
