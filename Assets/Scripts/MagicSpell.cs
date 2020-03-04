@@ -33,8 +33,8 @@ public class MagicSpell : MonoBehaviour
 	{
 		Vector3 lookDirection = Camera.main.transform.forward;
 
-		Instantiate(fireBall, transform.position, Quaternion.LookRotation(lookDirection));
-
+		GameObject fire = Instantiate(fireBall, transform.position, Quaternion.LookRotation(lookDirection));
+		fire.GetComponent<FireBall>().fire = fireParticles;
 	}
 
 

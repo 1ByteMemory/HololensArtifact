@@ -123,8 +123,9 @@ GameObject:
   - component: {fileID: 5991452}
   - component: {fileID: 5991449}
   - component: {fileID: 5991454}
+  - component: {fileID: 5991450}
   - component: {fileID: 5991453}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,6 +145,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5991450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5991448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e10acccba8cb23b4eb7fbeedd1ac0905, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireBall: {fileID: 1947871717301538, guid: a990e3ac1318b834488c784d851f42a9, type: 3}
+  fireParticles: {fileID: 1478314613700728, guid: be6847dd39ab95f4daa2ed98e4f90564,
+    type: 3}
+  coolDown: 5
 --- !u!4 &5991452
 Transform:
   m_ObjectHideFlags: 0
@@ -179,8 +196,8 @@ MonoBehaviour:
   OnInputActionStarted:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5991454}
-        m_MethodName: RotateCube
+      - m_Target: {fileID: 5991450}
+        m_MethodName: CastFireball
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

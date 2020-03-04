@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4469749203399680}
+  - component: {fileID: 1592657704017573424}
   - component: {fileID: 198104970619360998}
   - component: {fileID: 199570947319072982}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MediumFlames
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32,6 +33,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &1592657704017573424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478314613700728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aea0c0a337f802e498f89e1a299bfae5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  decayTime: 20
 --- !u!198 &198104970619360998
 ParticleSystem:
   m_ObjectHideFlags: 0
