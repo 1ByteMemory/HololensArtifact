@@ -7,6 +7,7 @@ public class MagicSpell : MonoBehaviour
 
 	public GameObject fireBall;
 	public GameObject fireParticles;
+	public GameObject explosion;
 
 	public float coolDown = 5;
 
@@ -31,10 +32,12 @@ public class MagicSpell : MonoBehaviour
 
 	public void CastFireball()
 	{
+		Debug.Log("Casting Fire");
 		Vector3 lookDirection = Camera.main.transform.forward;
 
-		GameObject fire = Instantiate(fireBall, transform.position, Quaternion.LookRotation(lookDirection));
+		GameObject fire = Instantiate(fireBall, transform.position + (transform.forward * 0.3f), Quaternion.LookRotation(lookDirection));
 		fire.GetComponent<FireBall>().fire = fireParticles;
+		Debug.Log(fire);
 	}
 
 
