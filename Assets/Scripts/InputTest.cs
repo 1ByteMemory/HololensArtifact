@@ -25,4 +25,8 @@ public class InputTest : MonoBehaviour
 		isRotating = !isRotating;
 	}
 
+	public void Say(string say)
+	{
+		Debug.Log(say);
+	}
 }
